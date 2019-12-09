@@ -1,0 +1,58 @@
+HKLM 
+{
+	NoRemove Software
+	{
+		NoRemove Microsoft
+		{
+			NoRemove MMC
+			{
+				NoRemove Snapins
+				{
+					ForceRemove {C942D063-A206-49A7-9684-80F2CDF63B00} =
+						s 'Test' 
+					{
+						val NameString = s 'Test'
+						val About = s '{4D339EE0-1F2A-4988-BE7C-0897F1472D4D}'
+						NodeTypes
+						{
+							{DC1C5CDA-0887-4584-B7AE-3816EF175C6D}
+						}
+						StandAlone
+					}
+				}
+				NoRemove NodeTypes
+				{
+					ForceRemove {DC1C5CDA-0887-4584-B7AE-3816EF175C6D}
+					{
+					}
+												
+				}
+			}
+		}
+	}
+}
+HKCR
+{
+	MmcTest.Test.1 = s 'Test Class'
+	{
+		CLSID = s '{C942D063-A206-49A7-9684-80F2CDF63B00}'
+	}
+	MmcTest.Test = s 'Test Class'
+	{
+		CLSID = s '{C942D063-A206-49A7-9684-80F2CDF63B00}'
+		CurVer = s 'MmcTest.Test.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {C942D063-A206-49A7-9684-80F2CDF63B00} = s 'Test Class'
+		{
+			ProgID = s 'MmcTest.Test.1'
+			VersionIndependentProgID = s 'MmcTest.Test'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{95372EEF-51F1-4873-BDD1-2513649D5843}'
+		}
+	}
+}

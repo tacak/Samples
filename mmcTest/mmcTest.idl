@@ -1,0 +1,36 @@
+// mmcTest.idl : mmcTest.dll 用の IDL ソース ファイル
+//
+
+// このファイルはタイプ ライブラリ (mmcTest.tlb) を作成するために
+// タイプ ライブラリ作成ツール MIDL によって処理されます。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(95372EEF-51F1-4873-BDD1-2513649D5843),
+	version(1.0),
+	helpstring("mmcTest 1.0 ﾀｲﾌﾟ ﾗｲﾌﾞﾗﾘ")
+]
+library MMCTESTLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(C942D063-A206-49A7-9684-80F2CDF63B00),
+		helpstring("Test Class")
+	]
+	coclass Test
+	{
+		[default] interface IUnknown;
+	}
+	[
+		uuid(4D339EE0-1F2A-4988-BE7C-0897F1472D4D),
+		helpstring("Test Class About")
+	]
+	coclass TestAbout
+	{
+		[default] interface IUnknown;
+	}
+};
